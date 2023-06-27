@@ -1,0 +1,16 @@
+PODS:
+  - sjnscythe (0.1.0)
+
+DEPENDENCIES:
+  - sjnscythe (from `../`)
+
+EXTERNAL SOURCES:
+  sjnscythe:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  sjnscythe: 07726370e3c66cb9fe2469f4b84110735a94c046
+
+PODFILE CHECKSUM: 454516c6881924103bb2c46d47a916f58437d78f
+
+COCOAPODS: 1.12.1

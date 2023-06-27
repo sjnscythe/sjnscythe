@@ -1,0 +1,6 @@
+framework module Pods_sjnscythe_Example {
+  umbrella header "Pods-sjnscythe_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module sjnscythe {
+  umbrella header "sjnscythe-umbrella.h"
+
+  export *
+  module * { export * }
+}
