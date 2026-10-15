@@ -1,208 +1,226 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" width="1000" height="300">
-<style>
-  svg { background:#080b10; }
+<svg
+xmlns=“http://www.w3.org/2000/svg”
+width=“1000”
+height=“300”
+viewBox=“0 0 1000 300”
 
-.star { fill:#fff; animation:twinkle 3s ease-in-out infinite; }
-.s2 { animation-delay:.7s; }
-.s3 { animation-delay:1.4s; }
-.s4 { animation-delay:2.1s; }
-
-@keyframes twinkle {
-0%,100% { opacity:.15; }
-50% { opacity:1; }
-}
-
-.cloud {
-fill:#252b35;
-animation:cloud 28s linear infinite;
-}
-
-.cloud2 {
-animation-duration:39s;
-animation-delay:-17s;
-opacity:.65;
-}
-
-@keyframes cloud {
-from { transform:translateX(-220px); }
-to { transform:translateX(1100px); }
-}
-
-.meteor {
-stroke:#fff;
-stroke-width:2;
-stroke-linecap:round;
-animation:meteor 9s linear infinite;
-}
-
-@keyframes meteor {
-0%,72% { opacity:0; transform:translate(0,0); }
-74% { opacity:1; }
-81% { opacity:0; transform:translate(180px,85px); }
-100% { opacity:0; }
-}
-
-.train {
-animation:train 18s linear infinite;
-}
-
-@keyframes train {
-from { transform:translateX(-300px); }
-to { transform:translateX(1250px); }
-}
-
-.walker {
-animation:walk 16s ease-in-out infinite alternate;
-}
-
-@keyframes walk {
-from { transform:translateX(80px); }
-to { transform:translateX(720px); }
-}
-
-.leg1 { animation:leg1 .45s ease-in-out infinite alternate; transform-origin:0 0; }
-.leg2 { animation:leg2 .45s ease-in-out infinite alternate; transform-origin:0 0; }
-
-@keyframes leg1 {
-from { transform:rotate(-15deg); }
-to { transform:rotate(15deg); }
-}
-
-@keyframes leg2 {
-from { transform:rotate(15deg); }
-to { transform:rotate(-15deg); }
-}
-
-.cat-tail {
-animation:tail 2.2s ease-in-out infinite alternate;
-transform-origin:880px 247px;
-}
-
-@keyframes tail {
-from { transform:rotate(-4deg); }
-to { transform:rotate(12deg); }
-}
-
-.rain {
-stroke:#687180;
-stroke-width:1;
-stroke-linecap:round;
-stroke-dasharray:5 12;
-animation:rain .65s linear infinite;
-opacity:.25;
-}
-
-@keyframes rain {
-to { stroke-dashoffset:-34; }
-}
-
-.eye {
-animation:blink 5s infinite;
-transform-origin:center;
-}
-
-@keyframes blink {
-0%,45%,49%,100% { transform:scaleY(1); }
-47% { transform:scaleY(.05); }
-}
-<!-- sky -->
-<g opacity=".8">
-  <circle class="star" cx="70" cy="45" r="1.5"/>
-  <circle class="star s2" cx="160" cy="82" r="1"/>
-  <circle class="star s3" cx="245" cy="34" r="1.5"/>
-  <circle class="star s4" cx="350" cy="69" r="1"/>
-  <circle class="star s2" cx="450" cy="30" r="1"/>
-  <circle class="star" cx="570" cy="72" r="1.5"/>
-  <circle class="star s4" cx="680" cy="40" r="1"/>
-  <circle class="star s3" cx="780" cy="82" r="1"/>
-  <circle class="star" cx="895" cy="39" r="1.5"/>
-  <circle class="star s2" cx="950" cy="95" r="1"/>
-  <circle class="star s4" cx="520" cy="115" r="1"/>
-  <circle class="star s3" cx="105" cy="130" r="1"/>
-</g>
-<!-- moon -->
-<circle cx="835" cy="66" r="25" fill="#e8ebef"/>
-<circle cx="846" cy="57" r="25" fill="#080b10"/>
-<!-- clouds -->
-<g class="cloud">
-  <ellipse cx="90" cy="108" rx="55" ry="14"/>
-  <ellipse cx="60" cy="103" rx="25" ry="18"/>
-  <ellipse cx="110" cy="99" rx="32" ry="21"/>
-</g>
-<g class="cloud cloud2">
-  <ellipse cx="300" cy="76" rx="65" ry="13"/>
-  <ellipse cx="270" cy="70" rx="27" ry="17"/>
-  <ellipse cx="325" cy="68" rx="35" ry="20"/>
-</g>
-<!-- shooting star -->
-<line class="meteor" x1="180" y1="30" x2="130" y2="7"/>
-<!-- distant mountains -->
-<!-- train track -->
-<line x1="0" y1="211" x2="1000" y2="211" stroke="#434b57" stroke-width="2"/>
-<line x1="0" y1="217" x2="1000" y2="217" stroke="#252c35" stroke-width="2"/>
-<!-- train -->
-<g class="train">
-  <rect x="-170" y="187" width="150" height="23" rx="3" fill="#343c47"/>
-  <rect x="-158" y="193" width="17" height="8" fill="#d6d9dd"/>
-  <rect x="-131" y="193" width="17" height="8" fill="#d6d9dd"/>
-  <rect x="-104" y="193" width="17" height="8" fill="#d6d9dd"/>
-  <rect x="-77" y="193" width="17" height="8" fill="#d6d9dd"/>
-  <rect x="-50" y="193" width="17" height="8" fill="#d6d9dd"/>
-  <circle cx="-140" cy="211" r="5" fill="#080b10"/>
-  <circle cx="-48" cy="211" r="5" fill="#080b10"/>
-</g>
-<!-- ground -->
-<!-- grass -->
-<g stroke="#69727d" stroke-width="1">
-  <path d="M40 247 l-5 -9 M40 247 l4 -11"/>
-  <path d="M130 246 l-3 -12 M130 246 l7 -9"/>
-  <path d="M245 246 l-5 -8 M245 246 l2 -13"/>
-  <path d="M350 246 l-4 -10 M350 246 l6 -7"/>
-  <path d="M650 246 l-3 -12 M650 246 l8 -9"/>
-  <path d="M750 246 l-6 -10 M750 246 l3 -12"/>
-  <path d="M965 247 l-5 -12 M965 247 l7 -8"/>
-</g>
-<!-- tiny walker -->
-<g class="walker" fill="#e4e7eb" stroke="#e4e7eb" stroke-width="3" stroke-linecap="round">
-  <!-- head -->
-  <circle cx="90" cy="222" r="7"/>
-  <!-- body -->
-  <line x1="90" y1="229" x2="90" y2="242"/>
-  <!-- arms -->
-  <line x1="90" y1="232" x2="82" y2="238"/>
-  <line x1="90" y1="232" x2="98" y2="237"/>
-  <!-- legs -->
-  <g class="leg1">
-    <line x1="90" y1="241" x2="84" y2="250"/>
+  <style>
+    .star {
+      fill: white;
+      animation: twinkle 2s ease-in-out infinite alternate;
+    }
+    .delay1 { animation-delay: 0.5s; }
+    .delay2 { animation-delay: 1s; }
+    .delay3 { animation-delay: 1.5s; }
+    @keyframes twinkle {
+      from { opacity: 0.2; }
+      to   { opacity: 1; }
+    }
+    .cloud {
+      animation: moveCloud 25s linear infinite;
+    }
+    @keyframes moveCloud {
+      from { transform: translateX(-200px); }
+      to   { transform: translateX(1200px); }
+    }
+    .walker {
+      animation: walkAcross 15s linear infinite alternate;
+    }
+    @keyframes walkAcross {
+      from { transform: translateX(0px); }
+      to   { transform: translateX(700px); }
+    }
+    .train {
+      animation: trainAcross 12s linear infinite;
+    }
+    @keyframes trainAcross {
+      from { transform: translateX(-300px); }
+      to   { transform: translateX(1400px); }
+    }
+    .tail {
+      animation: tailMove 1.5s ease-in-out infinite alternate;
+      transform-origin: 880px 245px;
+    }
+    @keyframes tailMove {
+      from { transform: rotate(-8deg); }
+      to   { transform: rotate(10deg); }
+    }
+  </style>
+  <!-- BACKGROUND -->
+  <!-- STARS -->
+  <circle class="star" cx="70" cy="45" r="2"/>
+  <circle class="star delay1" cx="145" cy="90" r="1.5"/>
+  <circle class="star delay2" cx="225" cy="38" r="2"/>
+  <circle class="star delay3" cx="310" cy="75" r="1.5"/>
+  <circle class="star delay1" cx="410" cy="35" r="1.5"/>
+  <circle class="star delay2" cx="505" cy="100" r="2"/>
+  <circle class="star" cx="590" cy="55" r="1.5"/>
+  <circle class="star delay3" cx="690" cy="35" r="2"/>
+  <circle class="star delay1" cx="760" cy="105" r="1.5"/>
+  <circle class="star delay2" cx="920" cy="50" r="2"/>
+  <circle class="star" cx="960" cy="115" r="1.5"/>
+  <!-- MOON -->
+  <!-- CLOUD -->
+  <g class="cloud" fill="#30363d">
+<ellipse
+  cx="70"
+  cy="115"
+  rx="55"
+  ry="14"
+/>
+<circle
+  cx="45"
+  cy="105"
+  r="19"
+/>
+<circle
+  cx="85"
+  cy="100"
+  r="25"
+/>
+<circle
+  cx="115"
+  cy="110"
+  r="17"
+/>
   </g>
-  <g class="leg2">
-    <line x1="90" y1="241" x2="96" y2="250"/>
+  <!-- MOUNTAINS -->
+  <!-- SECOND MOUNTAIN LAYER -->
+  <!-- TRAIN TRACK -->
+  <!-- TRAIN -->
+  <g class="train">
+<rect
+  x="-180"
+  y="195"
+  width="160"
+  height="24"
+  rx="3"
+  fill="#484f58"
+/>
+<rect x="-165" y="201" width="18" height="8" fill="#f0f3f6"/>
+<rect x="-137" y="201" width="18" height="8" fill="#f0f3f6"/>
+<rect x="-109" y="201" width="18" height="8" fill="#f0f3f6"/>
+<rect x="-81"  y="201" width="18" height="8" fill="#f0f3f6"/>
+<rect x="-53"  y="201" width="18" height="8" fill="#f0f3f6"/>
+<circle
+  cx="-145"
+  cy="219"
+  r="5"
+  fill="#0d1117"
+/>
+<circle
+  cx="-55"
+  cy="219"
+  r="5"
+  fill="#0d1117"
+/>
   </g>
-</g>
-<!-- sleeping cat -->
-<g fill="#b8bec7">
-  <ellipse cx="881" cy="246" rx="20" ry="9"/>
-  <circle cx="898" cy="240" r="8"/>
-  <!-- ears -->
-  <path d="M892 235 L894 226 L899 234 Z"/>
-  <path d="M900 234 L905 227 L905 237 Z"/>
-  <!-- eyes -->
-  <g class="eye" stroke="#080b10" stroke-width="1.5">
-    <line x1="895" y1="240" x2="898" y2="240"/>
-    <line x1="901" y1="240" x2="904" y2="240"/>
+  <!-- GROUND -->
+  <!-- WALKING PERSON -->
+
+<g
+class=“walker”
+stroke=”#f0f3f6”
+fill=”#f0f3f6”
+stroke-width=“3”
+stroke-linecap=“round”
+
+<circle
+  cx="100"
+  cy="220"
+  r="7"
+/>
+<line
+  x1="100"
+  y1="227"
+  x2="100"
+  y2="240"
+/>
+<line
+  x1="100"
+  y1="231"
+  x2="91"
+  y2="237"
+/>
+<line
+  x1="100"
+  y1="231"
+  x2="109"
+  y2="237"
+/>
+<line
+  x1="100"
+  y1="240"
+  x2="93"
+  y2="250"
+/>
+<line
+  x1="100"
+  y1="240"
+  x2="107"
+  y2="250"
+/>
   </g>
-  <!-- tail -->
-<!-- subtle rain -->
-<g class="rain">
-  <line x1="50" y1="120" x2="30" y2="170"/>
-  <line x1="130" y1="100" x2="110" y2="150"/>
-  <line x1="220" y1="125" x2="200" y2="175"/>
-  <line x1="320" y1="105" x2="300" y2="155"/>
-  <line x1="420" y1="125" x2="400" y2="175"/>
-  <line x1="520" y1="110" x2="500" y2="160"/>
-  <line x1="620" y1="125" x2="600" y2="175"/>
-  <line x1="720" y1="100" x2="700" y2="150"/>
-  <line x1="820" y1="120" x2="800" y2="170"/>
-  <line x1="920" y1="105" x2="900" y2="155"/>
-</g>
+  <!-- CAT -->
+  <g fill="#8c959f">
+<ellipse
+  cx="875"
+  cy="246"
+  rx="20"
+  ry="8"
+/>
+<circle
+  cx="895"
+  cy="240"
+  r="8"
+/>
+<!-- ears -->
+<path
+  d="
+    M 889 236
+    L 891 226
+    L 897 235
+    Z
+  "
+/>
+<path
+  d="
+    M 897 234
+    L 903 226
+    L 904 237
+    Z
+  "
+/>
+<!-- tail -->
+<path
+  class="tail"
+  d="
+    M 858 246
+    Q 842 238
+    850 226
+  "
+  fill="none"
+  stroke="#8c959f"
+  stroke-width="5"
+  stroke-linecap="round"
+/>
+  </g>
+  <!-- GRASS -->
+
+<g
+stroke=”#8c959f”
+stroke-width=“1.5”
+stroke-linecap=“round”
+
+<path d="M 45 250 L 40 238"/>
+<path d="M 45 250 L 50 240"/>
+<path d="M 175 249 L 171 237"/>
+<path d="M 175 249 L 181 239"/>
+<path d="M 330 250 L 326 239"/>
+<path d="M 330 250 L 336 241"/>
+<path d="M 680 249 L 676 237"/>
+<path d="M 680 249 L 686 239"/>
+<path d="M 955 250 L 951 237"/>
+<path d="M 955 250 L 961 240"/>
+  </g>
 </svg>
