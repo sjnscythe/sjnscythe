@@ -1,261 +1,570 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="300" viewBox="0 0 1000 300">
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+
 <style>
-.star {
-  fill: #ffffff;
-  animation: twinkle 2s ease-in-out infinite alternate;
-}
-.s1 { animation-delay: .4s; }
-.s2 { animation-delay: .9s; }
-.s3 { animation-delay: 1.4s; }
-
-@keyframes twinkle {
-  from { opacity: .15; }
-  to { opacity: 1; }
-}
-
-.cloud {
-  animation: clouds 30s linear infinite;
-}
-@keyframes clouds {
-  from { transform: translateX(-200px); }
-  to { transform: translateX(1200px); }
-}
-
-.train {
-  animation: train 16s linear infinite;
-}
-@keyframes train {
-  from { transform: translateX(-250px); }
-  to { transform: translateX(1300px); }
-}
-
-.person {
-  animation: person 18s ease-in-out infinite alternate;
-}
-@keyframes person {
-  from { transform: translateX(0); }
-  to { transform: translateX(650px); }
-}
-
-.meteor {
-  animation: meteor 8s linear infinite;
-}
-@keyframes meteor {
-  0%, 70% {
-    opacity: 0;
-    transform: translate(0,0);
+  .rain {
+    stroke:#73808c;
+    stroke-width:1.4;
+    opacity:.32;
+    animation:rain .55s linear infinite;
   }
-  72% {
-    opacity: 1;
+
+  @keyframes rain {
+    from { transform:translateY(-40px); }
+    to { transform:translateY(80px); }
   }
-  82% {
-    opacity: 0;
-    transform: translate(170px,70px);
+
+  .batman {
+    opacity:.10;
+    animation:reveal 8s infinite;
   }
-  100% {
-    opacity: 0;
+
+  @keyframes reveal {
+    0%, 18%, 23%, 25%, 52%, 57%, 100% { opacity:.07; }
+    19% { opacity:.42; }
+    20% { opacity:.10; }
+    21% { opacity:.82; }
+    22% { opacity:.14; }
+
+    53% { opacity:.28; }
+    54% { opacity:.92; }
+    55% { opacity:.16; }
+    56% { opacity:.62; }
   }
-}
+
+  .skyFlash {
+    fill:#c9d8e8;
+    opacity:0;
+    animation:flash 8s infinite;
+  }
+
+  @keyframes flash {
+    0%,18%,20%,22%,52%,54%,56%,100% { opacity:0; }
+
+    19% { opacity:.16; }
+    21% { opacity:.35; }
+
+    53% { opacity:.10; }
+    55% { opacity:.42; }
+  }
+
+  .bolt1 {
+    opacity:0;
+    animation:bolt1 8s infinite;
+  }
+
+  @keyframes bolt1 {
+    0%,18%,22%,100% { opacity:0; }
+    19% { opacity:.85; }
+    20% { opacity:.08; }
+    21% { opacity:1; }
+  }
+
+  .bolt2 {
+    opacity:0;
+    animation:bolt2 8s infinite;
+  }
+
+  @keyframes bolt2 {
+    0%,52%,57%,100% { opacity:0; }
+    53% { opacity:.45; }
+    54% { opacity:1; }
+    55% { opacity:.12; }
+    56% { opacity:.8; }
+  }
+
+  .eyes {
+    opacity:.12;
+    animation:eyes 8s infinite;
+  }
+
+  @keyframes eyes {
+    0%,18%,23%,52%,57%,100% { opacity:.08; }
+    19%,21%,54%,56% { opacity:1; }
+  }
+
+  .fog {
+    animation:fog 22s linear infinite;
+  }
+
+  @keyframes fog {
+    from { transform:translateX(-180px); }
+    to { transform:translateX(1150px); }
+  }
 </style>
 
-<!-- SKY -->
-<rect width="1000" height="300" fill="#0d1117"/>
 
-<!-- STARS -->
-<circle class="star" cx="60" cy="40" r="1.5"/>
-<circle class="star s1" cx="125" cy="85" r="1"/>
-<circle class="star s2" cx="190" cy="30" r="1.5"/>
-<circle class="star s3" cx="260" cy="75" r="1"/>
-<circle class="star s1" cx="330" cy="42" r="1"/>
-<circle class="star s2" cx="410" cy="95" r="1.5"/>
-<circle class="star" cx="475" cy="35" r="1"/>
-<circle class="star s3" cx="550" cy="70" r="1.5"/>
-<circle class="star s1" cx="625" cy="25" r="1"/>
-<circle class="star s2" cx="700" cy="95" r="1"/>
-<circle class="star" cx="770" cy="45" r="1.5"/>
-<circle class="star s3" cx="900" cy="35" r="1"/>
-<circle class="star s1" cx="950" cy="90" r="1.5"/>
-<circle class="star s2" cx="850" cy="125" r="1"/>
-<circle class="star" cx="365" cy="130" r="1"/>
+<!-- NIGHT -->
 
-<!-- MOON -->
-<circle cx="835" cy="68" r="28" fill="#f0f6fc"/>
-<circle cx="849" cy="57" r="28" fill="#0d1117"/>
+<rect width="1000" height="420" fill="#030507"/>
 
-<!-- METEOR -->
-<g class="meteor">
-  <line x1="140" y1="25" x2="90" y2="5"
-        stroke="#ffffff"
-        stroke-width="2"
-        stroke-linecap="round"/>
-</g>
+<rect class="skyFlash"
+      width="1000"
+      height="420"/>
 
-<!-- CLOUD -->
-<g class="cloud" fill="#30363d">
-  <ellipse cx="90" cy="110" rx="60" ry="14"/>
-  <circle cx="55" cy="104" r="19"/>
-  <circle cx="90" cy="97" r="26"/>
-  <circle cx="125" cy="105" r="18"/>
-</g>
 
-<!-- BACK MOUNTAINS -->
-<path
-d="M0 220
-L90 160
-L145 200
-L230 125
-L315 205
-L390 155
-L470 210
-L555 145
-L645 205
-L730 130
-L820 205
-L900 150
-L1000 215
-L1000 260
-L0 260Z"
-fill="#161b22"/>
+<!-- DISTANT CLOUDS -->
 
-<!-- FRONT MOUNTAINS -->
-<path
-d="M0 235
-L115 185
-L195 230
-L300 175
-L410 230
-L520 185
-L625 230
-L745 175
-L855 230
-L940 190
-L1000 220
-L1000 260
-L0 260Z"
-fill="#21262d"/>
+<g fill="#111820">
 
-<!-- TRAIN TRACK -->
-<line x1="0" y1="220" x2="1000" y2="220"
-      stroke="#8b949e" stroke-width="2"/>
-
-<line x1="0" y1="225" x2="1000" y2="225"
-      stroke="#30363d" stroke-width="2"/>
-
-<!-- TRAIN -->
-<g class="train">
-
-  <rect x="-190" y="193"
-        width="170" height="27"
-        rx="3"
-        fill="#484f58"/>
-
-  <rect x="-175" y="199" width="19" height="9" fill="#f0f6fc"/>
-  <rect x="-145" y="199" width="19" height="9" fill="#f0f6fc"/>
-  <rect x="-115" y="199" width="19" height="9" fill="#f0f6fc"/>
-  <rect x="-85" y="199" width="19" height="9" fill="#f0f6fc"/>
-  <rect x="-55" y="199" width="19" height="9" fill="#f0f6fc"/>
-
-  <circle cx="-155" cy="220" r="5" fill="#0d1117"/>
-  <circle cx="-55" cy="220" r="5" fill="#0d1117"/>
+  <ellipse cx="120" cy="75" rx="150" ry="40"/>
+  <ellipse cx="290" cy="65" rx="170" ry="48"/>
+  <ellipse cx="490" cy="80" rx="190" ry="50"/>
+  <ellipse cx="700" cy="60" rx="180" ry="48"/>
+  <ellipse cx="900" cy="80" rx="170" ry="50"/>
 
 </g>
 
-<!-- GROUND -->
-<path
-d="M0 250
-Q80 239 160 250
-T320 250
-T480 250
-T640 250
-T800 250
-T1000 250
-L1000 300
-L0 300Z"
-fill="#161b22"/>
 
-<path
-d="M0 250
-Q80 239 160 250
-T320 250
-T480 250
-T640 250
-T800 250
-T1000 250"
-fill="none"
-stroke="#8b949e"
-stroke-width="2"/>
+<!-- LIGHTNING LEFT -->
 
-<!-- GRASS -->
-<g stroke="#8b949e"
-   stroke-width="1.5"
-   stroke-linecap="round">
-
-<path d="M40 250 L35 238 M40 250 L46 240"/>
-<path d="M160 250 L157 237 M160 250 L167 240"/>
-<path d="M290 250 L285 240 M290 250 L295 236"/>
-<path d="M520 250 L516 238 M520 250 L527 241"/>
-<path d="M700 250 L695 237 M700 250 L707 240"/>
-<path d="M960 250 L955 238 M960 250 L966 240"/>
-
-</g>
-
-<!-- WALKER -->
-<g class="person"
-   stroke="#f0f6fc"
-   fill="#f0f6fc"
-   stroke-width="3"
-   stroke-linecap="round">
-
-  <circle cx="110" cy="220" r="7"/>
-
-  <line x1="110" y1="227"
-        x2="110" y2="240"/>
-
-  <line x1="110" y1="231"
-        x2="101" y2="237"/>
-
-  <line x1="110" y1="231"
-        x2="119" y2="237"/>
-
-  <line x1="110" y1="240"
-        x2="103" y2="250"/>
-
-  <line x1="110" y1="240"
-        x2="117" y2="250"/>
-
-</g>
-
-<!-- CAT -->
-<g fill="#8b949e">
-
-  <ellipse cx="875" cy="245"
-           rx="21" ry="8"/>
-
-  <circle cx="895" cy="239"
-          r="8"/>
-
-  <path d="M889 235 L891 225 L897 234 Z"/>
-  <path d="M898 234 L904 225 L904 236 Z"/>
-
-  <path d="M857 245
-           Q838 239 848 225"
-        fill="none"
-        stroke="#8b949e"
-        stroke-width="5"
-        stroke-linecap="round"/>
-
-</g>
-
-<!-- LITTLE PLANT -->
-<g stroke="#8b949e"
+<g class="bolt1"
    fill="none"
-   stroke-width="2"
-   stroke-linecap="round">
+   stroke="#e6f2ff"
+   stroke-width="4"
+   stroke-linejoin="miter">
 
-  <path d="M805 250 Q805 235 805 225"/>
-  <path d="M805 235 Q793 230 791 220"/>
-  <path d="M805 240 Q817 234 820 224"/>
+  <path d="
+    M180 0
+    L205 58
+    L188 58
+    L220 115
+    L201 115
+    L238 180
+    L218 180
+    L258 248
+  "/>
+
+  <path d="
+    M219 115
+    L260 142
+    L246 143
+    L280 177
+  "
+  stroke-width="2"/>
 
 </g>
+
+
+<!-- LIGHTNING RIGHT -->
+
+<g class="bolt2"
+   fill="none"
+   stroke="#dbeeff"
+   stroke-width="4">
+
+  <path d="
+    M815 0
+    L790 55
+    L807 55
+    L775 105
+    L792 105
+    L755 166
+    L774 166
+    L735 230
+  "/>
+
+  <path d="
+    M775 105
+    L735 130
+    L750 132
+    L720 165
+  "
+  stroke-width="2"/>
+
+</g>
+
+
+<!-- BATMAN -->
+
+<g class="batman">
+
+
+  <!-- CAPE -->
+
+  <path d="
+    M365 410
+    C370 330 385 275 414 237
+
+    C430 215 446 200 459 192
+
+    L541 192
+
+    C560 203 576 219 590 240
+
+    C620 284 635 337 642 410
+
+    L590 410
+
+    L575 345
+
+    L557 410
+
+    L520 410
+
+    L500 340
+
+    L480 410
+
+    L443 410
+
+    L425 345
+
+    L410 410
+
+    Z
+  "
+  fill="#090d12"/>
+
+
+  <!-- SHOULDERS / ARMOR -->
+
+  <path d="
+    M405 410
+
+    L415 284
+
+    Q420 246 457 228
+
+    L543 228
+
+    Q580 246 585 284
+
+    L595 410
+
+    Z
+  "
+  fill="#171d24"
+  stroke="#313a44"
+  stroke-width="2"/>
+
+
+  <!-- CHEST ARMOR PANELS -->
+
+  <path d="
+    M457 253
+    L495 267
+    L495 330
+    L440 310
+    Z
+  "
+  fill="#202832"/>
+
+  <path d="
+    M543 253
+    L505 267
+    L505 330
+    L560 310
+    Z
+  "
+  fill="#202832"/>
+
+
+  <!-- ABDOMINAL ARMOR -->
+
+  <path d="M455 325 L495 337 L495 365 L450 355 Z"
+        fill="#151b22"/>
+
+  <path d="M545 325 L505 337 L505 365 L550 355 Z"
+        fill="#151b22"/>
+
+  <path d="M450 362 L495 371 L495 397 L445 390 Z"
+        fill="#11171d"/>
+
+  <path d="M550 362 L505 371 L505 397 L555 390 Z"
+        fill="#11171d"/>
+
+
+  <!-- NECK -->
+
+  <path d="
+    M465 235
+    L470 190
+    L530 190
+    L535 235
+    L500 255
+    Z
+  "
+  fill="#161c22"/>
+
+
+  <!-- COWL -->
+
+  <path d="
+    M455 185
+
+    L451 87
+
+    L477 116
+
+    Q500 104 523 116
+
+    L549 87
+
+    L545 185
+
+    Q540 215 520 231
+
+    L500 244
+
+    L480 231
+
+    Q460 215 455 185
+
+    Z
+  "
+  fill="#11161c"
+  stroke="#303943"
+  stroke-width="2"/>
+
+
+  <!-- COWL FOREHEAD -->
+
+  <path d="
+    M477 116
+    Q500 105 523 116
+    L532 170
+    L500 160
+    L468 170
+    Z
+  "
+  fill="#181e25"/>
+
+
+  <!-- LEFT BROW -->
+
+  <path d="
+    M468 164
+    L493 169
+    L490 181
+    L468 177
+    Z
+  "
+  fill="#050709"/>
+
+
+  <!-- RIGHT BROW -->
+
+  <path d="
+    M532 164
+    L507 169
+    L510 181
+    L532 177
+    Z
+  "
+  fill="#050709"/>
+
+
+  <!-- EYES -->
+
+  <g class="eyes" fill="#f2f7ff">
+
+    <path d="
+      M470 170
+      L492 174
+      L487 181
+      L472 178
+      Z
+    "/>
+
+    <path d="
+      M530 170
+      L508 174
+      L513 181
+      L528 178
+      Z
+    "/>
+
+  </g>
+
+
+  <!-- EXPOSED LOWER FACE -->
+
+  <path d="
+    M466 187
+
+    L480 184
+    L488 194
+
+    L500 198
+
+    L512 194
+    L520 184
+
+    L534 187
+
+    L528 213
+
+    L514 228
+
+    L500 236
+
+    L486 228
+
+    L472 213
+
+    Z
+  "
+  fill="#a08f82"/>
+
+
+  <!-- NOSE SHADOW -->
+
+  <path d="
+    M500 185
+    L493 207
+    L500 211
+    L507 207
+    Z
+  "
+  fill="#695f59"/>
+
+
+  <!-- MOUTH -->
+
+  <path d="
+    M486 219
+    Q500 215 514 219
+  "
+  fill="none"
+  stroke="#302b29"
+  stroke-width="2"/>
+
+
+  <!-- JAW -->
+
+  <path d="
+    M477 215
+    L487 230
+    L500 237
+    L513 230
+    L523 215
+  "
+  fill="none"
+  stroke="#786b63"
+  stroke-width="2"/>
+
+
+  <!-- BAT EMBLEM -->
+
+  <path d="
+    M500 275
+
+    L487 266
+    L477 270
+    L462 260
+    L468 278
+    L450 275
+
+    L465 288
+    L458 300
+
+    L482 294
+    L500 309
+
+    L518 294
+    L542 300
+
+    L535 288
+    L550 275
+
+    L532 278
+    L538 260
+    L523 270
+    L513 266
+
+    Z
+  "
+  fill="#050709"/>
+
+
+  <!-- SHOULDER HIGHLIGHTS -->
+
+  <path d="
+    M456 239
+    Q430 250 418 280
+  "
+  fill="none"
+  stroke="#4c5864"
+  stroke-width="3"/>
+
+  <path d="
+    M544 239
+    Q570 250 582 280
+  "
+  fill="none"
+  stroke="#4c5864"
+  stroke-width="3"/>
+
+</g>
+
+
+<!-- RAIN -->
+
+<g class="rain">
+
+  <line x1="30" y1="-30" x2="10" y2="20"/>
+  <line x1="80" y1="20" x2="60" y2="70"/>
+  <line x1="130" y1="-20" x2="110" y2="30"/>
+  <line x1="180" y1="40" x2="160" y2="90"/>
+  <line x1="230" y1="-10" x2="210" y2="40"/>
+  <line x1="280" y1="25" x2="260" y2="75"/>
+  <line x1="330" y1="-25" x2="310" y2="25"/>
+  <line x1="380" y1="45" x2="360" y2="95"/>
+  <line x1="430" y1="-15" x2="410" y2="35"/>
+  <line x1="480" y1="15" x2="460" y2="65"/>
+  <line x1="530" y1="-30" x2="510" y2="20"/>
+  <line x1="580" y1="40" x2="560" y2="90"/>
+  <line x1="630" y1="-10" x2="610" y2="40"/>
+  <line x1="680" y1="25" x2="660" y2="75"/>
+  <line x1="730" y1="-25" x2="710" y2="25"/>
+  <line x1="780" y1="45" x2="760" y2="95"/>
+  <line x1="830" y1="-15" x2="810" y2="35"/>
+  <line x1="880" y1="15" x2="860" y2="65"/>
+  <line x1="930" y1="-30" x2="910" y2="20"/>
+  <line x1="980" y1="35" x2="960" y2="85"/>
+
+  <line x1="55" y1="120" x2="35" y2="170"/>
+  <line x1="105" y1="170" x2="85" y2="220"/>
+  <line x1="155" y1="110" x2="135" y2="160"/>
+  <line x1="205" y1="190" x2="185" y2="240"/>
+  <line x1="255" y1="130" x2="235" y2="180"/>
+  <line x1="305" y1="210" x2="285" y2="260"/>
+  <line x1="355" y1="120" x2="335" y2="170"/>
+  <line x1="405" y1="180" x2="385" y2="230"/>
+  <line x1="455" y1="110" x2="435" y2="160"/>
+  <line x1="505" y1="200" x2="485" y2="250"/>
+  <line x1="555" y1="130" x2="535" y2="180"/>
+  <line x1="605" y1="190" x2="585" y2="240"/>
+  <line x1="655" y1="115" x2="635" y2="165"/>
+  <line x1="705" y1="210" x2="685" y2="260"/>
+  <line x1="755" y1="140" x2="735" y2="190"/>
+  <line x1="805" y1="185" x2="785" y2="235"/>
+  <line x1="855" y1="115" x2="835" y2="165"/>
+  <line x1="905" y1="205" x2="885" y2="255"/>
+  <line x1="955" y1="135" x2="935" y2="185"/>
+
+</g>
+
+
+<!-- FOREGROUND FOG -->
+
+<g class="fog"
+   fill="#8794a0"
+   opacity=".055">
+
+  <ellipse cx="50" cy="375" rx="180" ry="22"/>
+  <ellipse cx="260" cy="390" rx="220" ry="25"/>
+  <ellipse cx="500" cy="370" rx="180" ry="20"/>
+
+</g>
+
+
+<!-- FOREGROUND DARKNESS -->
+
+<rect x="0"
+      y="405"
+      width="1000"
+      height="15"
+      fill="#010203"/>
 
 </svg>
