@@ -1,3 +1,3 @@
 <div align="center">
-  <img src="terrarium.svg" width="500%" alt="" />
+  <img src="terrarium.svg" width="1000%" alt="" />
 </div>
