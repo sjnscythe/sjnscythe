@@ -1,0 +1,261 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="300" viewBox="0 0 1000 300">
+<style>
+.star {
+  fill: #ffffff;
+  animation: twinkle 2s ease-in-out infinite alternate;
+}
+.s1 { animation-delay: .4s; }
+.s2 { animation-delay: .9s; }
+.s3 { animation-delay: 1.4s; }
+
+@keyframes twinkle {
+  from { opacity: .15; }
+  to { opacity: 1; }
+}
+
+.cloud {
+  animation: clouds 30s linear infinite;
+}
+@keyframes clouds {
+  from { transform: translateX(-200px); }
+  to { transform: translateX(1200px); }
+}
+
+.train {
+  animation: train 16s linear infinite;
+}
+@keyframes train {
+  from { transform: translateX(-250px); }
+  to { transform: translateX(1300px); }
+}
+
+.person {
+  animation: person 18s ease-in-out infinite alternate;
+}
+@keyframes person {
+  from { transform: translateX(0); }
+  to { transform: translateX(650px); }
+}
+
+.meteor {
+  animation: meteor 8s linear infinite;
+}
+@keyframes meteor {
+  0%, 70% {
+    opacity: 0;
+    transform: translate(0,0);
+  }
+  72% {
+    opacity: 1;
+  }
+  82% {
+    opacity: 0;
+    transform: translate(170px,70px);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+</style>
+
+<!-- SKY -->
+<rect width="1000" height="300" fill="#0d1117"/>
+
+<!-- STARS -->
+<circle class="star" cx="60" cy="40" r="1.5"/>
+<circle class="star s1" cx="125" cy="85" r="1"/>
+<circle class="star s2" cx="190" cy="30" r="1.5"/>
+<circle class="star s3" cx="260" cy="75" r="1"/>
+<circle class="star s1" cx="330" cy="42" r="1"/>
+<circle class="star s2" cx="410" cy="95" r="1.5"/>
+<circle class="star" cx="475" cy="35" r="1"/>
+<circle class="star s3" cx="550" cy="70" r="1.5"/>
+<circle class="star s1" cx="625" cy="25" r="1"/>
+<circle class="star s2" cx="700" cy="95" r="1"/>
+<circle class="star" cx="770" cy="45" r="1.5"/>
+<circle class="star s3" cx="900" cy="35" r="1"/>
+<circle class="star s1" cx="950" cy="90" r="1.5"/>
+<circle class="star s2" cx="850" cy="125" r="1"/>
+<circle class="star" cx="365" cy="130" r="1"/>
+
+<!-- MOON -->
+<circle cx="835" cy="68" r="28" fill="#f0f6fc"/>
+<circle cx="849" cy="57" r="28" fill="#0d1117"/>
+
+<!-- METEOR -->
+<g class="meteor">
+  <line x1="140" y1="25" x2="90" y2="5"
+        stroke="#ffffff"
+        stroke-width="2"
+        stroke-linecap="round"/>
+</g>
+
+<!-- CLOUD -->
+<g class="cloud" fill="#30363d">
+  <ellipse cx="90" cy="110" rx="60" ry="14"/>
+  <circle cx="55" cy="104" r="19"/>
+  <circle cx="90" cy="97" r="26"/>
+  <circle cx="125" cy="105" r="18"/>
+</g>
+
+<!-- BACK MOUNTAINS -->
+<path
+d="M0 220
+L90 160
+L145 200
+L230 125
+L315 205
+L390 155
+L470 210
+L555 145
+L645 205
+L730 130
+L820 205
+L900 150
+L1000 215
+L1000 260
+L0 260Z"
+fill="#161b22"/>
+
+<!-- FRONT MOUNTAINS -->
+<path
+d="M0 235
+L115 185
+L195 230
+L300 175
+L410 230
+L520 185
+L625 230
+L745 175
+L855 230
+L940 190
+L1000 220
+L1000 260
+L0 260Z"
+fill="#21262d"/>
+
+<!-- TRAIN TRACK -->
+<line x1="0" y1="220" x2="1000" y2="220"
+      stroke="#8b949e" stroke-width="2"/>
+
+<line x1="0" y1="225" x2="1000" y2="225"
+      stroke="#30363d" stroke-width="2"/>
+
+<!-- TRAIN -->
+<g class="train">
+
+  <rect x="-190" y="193"
+        width="170" height="27"
+        rx="3"
+        fill="#484f58"/>
+
+  <rect x="-175" y="199" width="19" height="9" fill="#f0f6fc"/>
+  <rect x="-145" y="199" width="19" height="9" fill="#f0f6fc"/>
+  <rect x="-115" y="199" width="19" height="9" fill="#f0f6fc"/>
+  <rect x="-85" y="199" width="19" height="9" fill="#f0f6fc"/>
+  <rect x="-55" y="199" width="19" height="9" fill="#f0f6fc"/>
+
+  <circle cx="-155" cy="220" r="5" fill="#0d1117"/>
+  <circle cx="-55" cy="220" r="5" fill="#0d1117"/>
+
+</g>
+
+<!-- GROUND -->
+<path
+d="M0 250
+Q80 239 160 250
+T320 250
+T480 250
+T640 250
+T800 250
+T1000 250
+L1000 300
+L0 300Z"
+fill="#161b22"/>
+
+<path
+d="M0 250
+Q80 239 160 250
+T320 250
+T480 250
+T640 250
+T800 250
+T1000 250"
+fill="none"
+stroke="#8b949e"
+stroke-width="2"/>
+
+<!-- GRASS -->
+<g stroke="#8b949e"
+   stroke-width="1.5"
+   stroke-linecap="round">
+
+<path d="M40 250 L35 238 M40 250 L46 240"/>
+<path d="M160 250 L157 237 M160 250 L167 240"/>
+<path d="M290 250 L285 240 M290 250 L295 236"/>
+<path d="M520 250 L516 238 M520 250 L527 241"/>
+<path d="M700 250 L695 237 M700 250 L707 240"/>
+<path d="M960 250 L955 238 M960 250 L966 240"/>
+
+</g>
+
+<!-- WALKER -->
+<g class="person"
+   stroke="#f0f6fc"
+   fill="#f0f6fc"
+   stroke-width="3"
+   stroke-linecap="round">
+
+  <circle cx="110" cy="220" r="7"/>
+
+  <line x1="110" y1="227"
+        x2="110" y2="240"/>
+
+  <line x1="110" y1="231"
+        x2="101" y2="237"/>
+
+  <line x1="110" y1="231"
+        x2="119" y2="237"/>
+
+  <line x1="110" y1="240"
+        x2="103" y2="250"/>
+
+  <line x1="110" y1="240"
+        x2="117" y2="250"/>
+
+</g>
+
+<!-- CAT -->
+<g fill="#8b949e">
+
+  <ellipse cx="875" cy="245"
+           rx="21" ry="8"/>
+
+  <circle cx="895" cy="239"
+          r="8"/>
+
+  <path d="M889 235 L891 225 L897 234 Z"/>
+  <path d="M898 234 L904 225 L904 236 Z"/>
+
+  <path d="M857 245
+           Q838 239 848 225"
+        fill="none"
+        stroke="#8b949e"
+        stroke-width="5"
+        stroke-linecap="round"/>
+
+</g>
+
+<!-- LITTLE PLANT -->
+<g stroke="#8b949e"
+   fill="none"
+   stroke-width="2"
+   stroke-linecap="round">
+
+  <path d="M805 250 Q805 235 805 225"/>
+  <path d="M805 235 Q793 230 791 220"/>
+  <path d="M805 240 Q817 234 820 224"/>
+
+</g>
+
+</svg>
