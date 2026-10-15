@@ -1,3 +1,3 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/sjnscythe/sjnscythe/main/assets/terrarium.svg" width="100%" />
-</p>
+<div align="center">
+  <img src="terrarium.svg" width="100%" alt="" />
+</div>
